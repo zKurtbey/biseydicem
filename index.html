@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bir Şey Diyeceğim</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Truculenta:opsz,wdth,wght@12..72,75..125,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="png" href="icon.png">
+</head>
+<body>
+    
+    <main>
+
+        <h1 id="soru">Benimle Çıkar Mısın?</h1>
+
+        <div>
+
+            <img id="resim" src="smk.jpg">
+
+            <img id="golge" src="smk.jpg">
+
+        </div>
+
+        <button id="evet">Evet</button>
+
+        <button id="hayir">Hayır</button>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        var isaretlendi = false;
+        
+        var hayir = document.querySelector("#hayir");
+
+        var evet = document.querySelector("#evet");
+
+        var resim = document.querySelector("#resim");
+
+        var golge = document.querySelector("#golge");
+
+        var soru = document.querySelector("#soru");
+
+        evet.addEventListener("click", ()=>{
+
+            if(isaretlendi != true){
+
+                resim.src="dance.gif";
+
+                resim.setAttribute("id", "gif");
+
+                golge.src="dance.gif";
+
+                golge.setAttribute("id", "golgegif");
+        
+                soru.innerHTML="SS AL VE BANA AT.";
+
+                hayir.removeEventListener("keypress", tikla);
+
+                hayir.removeEventListener("mouseover", mouseover);
+
+            }
+            
+            isaretlendi = true;
+        
+        });
+
+        evet.addEventListener("keypress", function(event){
+
+            if(isaretlendi != true){
+
+                if(event.key === 'Enter'){
+
+                    resim.src = "ms.jpg";
+
+                    golge.src = "ms.jpg";
+
+                    soru.innerHTML="Biz (yani sen ve ben):";
+                    
+                    hayir.removeEventListener("keypress", tikla);
+
+                    hayir.removeEventListener("mouseover", mouseover);
+    
+                }
+
+                isaretlendi = true;
+
+            }
+
+        });
+
+        if(isaretlendi == false){
+                    
+            var mouseover = function(){
+            
+                function getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+            
+                var top = getRandomInt(1, window.innerHeight - 75);
+            
+                var right = getRandomInt(1, window.innerWidth - 75);
+            
+                hayir.style.position="absolute";
+            
+                hayir.style.top = top + "px";
+
+                hayir.style.right = right + "px";
+
+            }
+            
+            hayir.addEventListener("mouseover", mouseover);
+            
+            var tikla = function(event){
+            
+                if(event.key == 'Enter'){
+
+                    resim.src="smc.jpg";
+                
+                    golge.src="smc.jpg";
+                
+                    soru.innerHTML="Hile yok.";
+                
+                    evet.focus();
+                
+                }
+            
+            }
+
+            hayir.addEventListener("keypress", tikla);
+            
+        }
+
+    </script>
+
+</body>
+</html>

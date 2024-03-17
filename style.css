@@ -1,0 +1,92 @@
+body{
+    background-color: #171620;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: start;
+    width: 100%;
+    height: 95svh;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: Truculenta;
+    font-size: calc(.75svw + .75em);
+    color: aquamarine;
+}
+
+img{
+    z-index: 1;
+    width: calc(10em + 30%);
+    border-radius: .75svw;
+    box-shadow: 0 0 10px#171620;
+    backdrop-filter: blur(50px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#gif{
+    z-index: 1;
+    width: calc(5em + 20%);
+    border-radius: .75svw;
+    box-shadow: 0 0 10px#171620;
+    backdrop-filter: blur(50px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#golge{
+    filter: blur(75px);
+    z-index: 0;
+}
+
+#golgegif{
+    filter: blur(75px);
+    z-index: 0;
+    width: calc(5em + 20%);
+}
+
+button{
+    font-size: calc(.5svw + .5em);
+    width: 7.5em;
+    height: 2.5em;
+    display: inline-block;
+    font-family: Truculenta;
+    font-weight: bolder;
+    border: none;
+    border-radius: .35svw;
+    cursor: pointer;
+    user-select: none;
+    transition: all .35s ease;
+    box-shadow: 0 0 10px#171620;
+    z-index: 2;
+}
+
+#evet{
+    position: absolute;
+    top: calc(5em + 70svh);
+    left: calc(5em + 25svw);
+    background-color: #14db1e;
+}
+
+#evet:hover{
+    box-shadow: 0 0 10px #14db1e;
+}
+
+#hayir{
+    transition: all .25s ease;
+    background-color: #c41c1c;
+    position: absolute;
+    top: calc(5em + 70svh);
+    right: calc(5em + 25svw);
+}
+
+#hayir:hover{
+    box-shadow: 0 0 10px #c41c1c;
+}
